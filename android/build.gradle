@@ -5,6 +5,7 @@ buildscript {
   repositories {
     google()
     mavenCentral()
+    jcenter()
   }
 
   dependencies {
@@ -80,6 +81,7 @@ android {
 repositories {
   mavenCentral()
   google()
+  jcenter()
 }
 
 def kotlin_version = getExtOrDefault("kotlinVersion")
@@ -90,5 +92,8 @@ dependencies {
   //noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-native:+"
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+implementation 'com.couchbase.lite:couchbase-lite-android-ktx:3.1.4'
+//  implementation rootProject.dependencies.module(safeExtGet('cblVersion', 'com.couchbase.lite:versionName:versionCode'))
 }
 

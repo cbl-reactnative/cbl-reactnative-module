@@ -1,5 +1,5 @@
 //
-//  CbliteReactNative.m
+//  CBLLogDomain.mm
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -14,25 +14,9 @@
 //  limitations under the License.
 //
 
+#import <Foundation/Foundation.h>
 #import <React/RCTBridgeModule.h>
 
-@interface RCT_EXTERN_MODULE(CbliteReactNative, NSObject)
-RCT_EXTERN_METHOD(multiply:(float)a
-                  withB:(float)b
-                  withResolver:(RCTPromiseResolveBlock)resolve
-                  withRejecter:(RCTPromiseRejectBlock)reject)
-
-+ (BOOL)requiresMainQueueSetup
-{
-    return NO;
-}
-@end
-
-@interface RCT_EXTERN_MODULE(CBLDatabase, NSObject)
-RCT_EXTERN_METHOD(logConsole:(String)domain  withLevel:(String)level errorBlock:(RCTResponseErrorBlock)errorCallback)
-
-+ (BOOL)requiresMainQueueSetup
-{
-    return YES;
-}
-@end
+ @interface RCT_EXTERN_MODULE(CBLLogDomain, NSObject)
+  RCT_EXTERN_METHOD(getDomains: (RCTResponseSenderBlock) callback)
+ @end
